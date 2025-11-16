@@ -1,5 +1,17 @@
-ind: junction
+kind: junction
+
 sources:
-  - kind: tar
-    url: https://gitlab.gnome.org/GNOME/gnome-build-meta/-/archive/49.0/gnome-build-meta-49.0.tar.gz
-    ref: 0d81e7bee8e8c085d2de898d858890a6c98130222f1b6d11a9e27e6383cb7dcc
+- kind: git_repo
+  url: https://gitlab.gnome.org/alatiera/gnome-build-meta.git
+  track: alatiera/homed-bootc
+  ref: 49-branchpoint-274-g0efd08f4a418a660c06903659ba7174ee0e1b982
+# - kind: patch_queue
+#   path: patches/gnome-build-meta
+
+config:
+  overrides:
+    core/meta-gnome-core-apps.bst: core/meta-gnome-core-apps.bst
+    freedesktop-sdk.bst: freedesktop-sdk.bst
+
+    plugins/buildstream-plugins.bst: plugins/buildstream-plugins.bst
+    plugins/buildstream-plugins-community.bst: plugins/buildstream-plugins-community.bst
