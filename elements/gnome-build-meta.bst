@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: https://gitlab.gnome.org/alatiera/gnome-build-meta.git
   track: alatiera/homed-bootc
-  ref: 49-branchpoint-274-g0efd08f4a418a660c06903659ba7174ee0e1b982
+  ref: 49-branchpoint-576-g745f755659e266d9a6803a0e155adff1f5d9875e
 # - kind: patch_queue
 #   path: patches/gnome-build-meta
 

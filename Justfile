@@ -13,19 +13,6 @@ build *ARGS:
     bst build oci/bluefin.bst
     bst artifact checkout --tar - oci/bluefin.bst | run0 podman load
 
-# Currently the junction does not work due to the singing keys
-# Import the fake keys, and then use a workspace to 
-# to use the local checkout
-setup-workspace:
-    #!/usr/bin/env bash
-    set -eu
-
-    cd ../gnome-build-meta
-    make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
-
-    cd ../monostroma
-    bst workspace open --no-checkout --directory ../gnome-build-meta gnome-build-meta.bst
-
 build-containerfile $image_name=image_name:
     sudo podman build --squash-all -t "${image_name}:latest" .
 
